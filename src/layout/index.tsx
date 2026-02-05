@@ -1,22 +1,26 @@
 import { FC, ReactNode } from "react";
 
+import { Typography } from "@NovaOrg/nova-mfe-shared-ui";
+
 type Props = {
   children: ReactNode;
+  title: string;
+  subtitle: string;
 };
 
-const Layout: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ title, subtitle, children }) => {
   return (
-    <div>
-      <div className="flex items-center justify-between">
-        <h2>NOVA</h2>
-        <button>Signup</button>
-      </div>
+    <>
       <div>
-        <h1>Welcome to Nova</h1>
-        <p>Sign in your Nova account to access all Nova products</p>
+        <Typography variant="h1" className="text-4xl font-semibold w-[60%]">
+          {title}
+        </Typography>
+        <Typography className="text-sm font-light mt-3 mb-6" variant="p">
+          {subtitle}
+        </Typography>
         {children}
       </div>
-    </div>
+    </>
   );
 };
 

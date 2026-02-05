@@ -44,7 +44,14 @@ declare module "*.css" {
 }
 
 declare module "@NovaOrg/nova-mfe-shared-ui" {
-  import React, { ButtonHTMLAttributes, ComponentPropsWithoutRef, FC, HTMLAttributes, ReactNode } from "react";
+  import React, {
+    ButtonHTMLAttributes,
+    ComponentPropsWithoutRef,
+    FC,
+    HTMLAttributes,
+    InputHTMLAttributes,
+    ReactNode,
+  } from "react";
 
   // Define the types for your shared components
   export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -81,6 +88,15 @@ declare module "@NovaOrg/nova-mfe-shared-ui" {
     interactive?: boolean;
   }
   export const Card: FC<CardProps>;
+
+  export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+    className?: string;
+    variant?: "sm" | "md" | "lg";
+    containerClassName?: string;
+    label?: string;
+  }
+
+  export const Checkbox: FC<CheckboxProps>;
 
   export function publicApiFunction(): void;
 
