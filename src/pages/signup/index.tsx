@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import GoogleIcon from "~/assets/icons/google.svg";
 import FacebookIcon from "~/assets/icons/facebook.svg";
 
-import { AUTHS_PATHS } from "~/constants/paths";
+import { AUTHS_PATHS, BASE_PATHS } from "~/constants/paths";
 
 const Signup = () => {
   return (
@@ -56,7 +56,7 @@ const Signup = () => {
             </Typography>
             <Typography className="text-sm text-gray-700">
               Already have an account?.{" "}
-              <Link to={`/${AUTHS_PATHS.SIGNIN}`} className="text-[#3c41e9] underline font-semibold">
+              <Link to={`/${BASE_PATHS.AUTH}/${AUTHS_PATHS.SIGNIN}`} className="text-[#3c41e9] underline font-semibold">
                 Signin
               </Link>
             </Typography>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import GoogleIcon from "~/assets/icons/google.svg";
 import FacebookIcon from "~/assets/icons/facebook.svg";
 import { useState } from "react";
-import { AUTHS_PATHS } from "~/constants/paths";
+import { AUTHS_PATHS, BASE_PATHS } from "~/constants/paths";
 
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -63,7 +63,10 @@ const Signin = () => {
               </Button>
               <div className="flex flex-row items-center justify-between">
                 <Checkbox label="Remember me" />
-                <Link to={"#"} className="text-sm text-[#3c41e9] underline">
+                <Link
+                  to={`/${BASE_PATHS.AUTH}/${AUTHS_PATHS.FORGOT_PASSWORD}`}
+                  className="text-sm text-[#3c41e9] underline"
+                >
                   Forgot Your Password?
                 </Link>
               </div>
@@ -81,7 +84,7 @@ const Signin = () => {
             </Typography>
             <Typography className="text-sm text-gray-700">
               Get started with Nova.{" "}
-              <Link to={`/${AUTHS_PATHS.SIGNUP}`} className="text-[#3c41e9] underline font-semibold">
+              <Link to={`/${BASE_PATHS.AUTH}/${AUTHS_PATHS.SIGNUP}`} className="text-[#3c41e9] underline font-semibold">
                 Signup
               </Link>
             </Typography>

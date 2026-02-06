@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { AUTHS_PATHS } from "./constants/paths";
+import { AUTHS_PATHS, BASE_PATHS } from "./constants/paths";
 import "./index.css";
 
 const Signin_page = lazy(() => import("~/pages/signin"));
@@ -12,10 +12,12 @@ export default function Root() {
     <div id="nova-mfe-auth">
       <BrowserRouter>
         <Routes>
-          <Route path={""} element={<Navigate to={AUTHS_PATHS.SIGNIN} replace />} />
-          <Route path={AUTHS_PATHS.SIGNIN} element={<Signin_page />} />
-          <Route path={AUTHS_PATHS.SIGNUP} element={<Signup_page />} />
-          <Route path={AUTHS_PATHS.FORGOT_PASSWORD} element={<ForgotPassword_page />} />
+          <Route path={BASE_PATHS.AUTH}>
+            <Route path={""} element={<Navigate to={AUTHS_PATHS.SIGNIN} replace />} />
+            <Route path={AUTHS_PATHS.SIGNIN} element={<Signin_page />} />
+            <Route path={AUTHS_PATHS.SIGNUP} element={<Signup_page />} />
+            <Route path={AUTHS_PATHS.FORGOT_PASSWORD} element={<ForgotPassword_page />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
