@@ -5,12 +5,10 @@ import { Link } from "react-router-dom";
 
 import GoogleIcon from "~/assets/icons/google.svg";
 import FacebookIcon from "~/assets/icons/facebook.svg";
-import { useState } from "react";
+
 import { AUTHS_PATHS } from "~/constants/paths";
 
 const Signup = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
   return (
     <div className="flex min-h-screen w-full items-center justify-center px-4">
       <div className="w-full max-w-120  py-8 rounded-xl ">
